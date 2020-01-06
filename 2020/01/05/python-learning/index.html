@@ -10,7 +10,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate" />
     <meta name="keywords" content="TriDiamond Obsidian,"> 
-    
+    <meta name="description" content="初识PythonPEP 8风格指南  PEP是Python Enhancement Proposal的缩写，通常翻译为“Python增强提案”。每个PEP都是一份为Python社区提供的指导Pyth,"> 
     <meta name="author" content="zhenbang"> 
     <link rel="alternative" href="atom.xml" title="个人博客|zhenbang" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -99,13 +99,13 @@
                 
                 <span>
                     <b class="iconfont icon-text2"></b> <i>文章字数</i>
-                    0
+                    2.6k
                 </span>
                 
                 
                 <span>
                     <b class="iconfont icon-timer__s"></b> <i>阅读约需</i>
-                    1 mins.
+                    2 mins.
                 </span>
                 
                 
@@ -118,7 +118,7 @@
             </p>
             
             
-            <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Tag2/" rel="tag">Tag2</a></li></ul>
+            <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Python/" rel="tag">Python</a></li></ul>
             
         </div>
     </div>
@@ -139,7 +139,63 @@
 <div class="article">
     <div class='main'>
         <div class="content markdown animated fadeIn">
-            
+            <h2 id="初识Python"><a href="#初识Python" class="headerlink" title="初识Python"></a>初识Python</h2><h3 id="PEP-8风格指南"><a href="#PEP-8风格指南" class="headerlink" title="PEP 8风格指南"></a>PEP 8风格指南</h3><p>  PEP是Python Enhancement Proposal的缩写，通常翻译为“Python增强提案”。每个PEP都是一份为Python社区提供的指导Python往更好的方向发展的技术文档，其中的第8号增强提案（PEP 8）是针对Python语言编订的代码风格指南。尽管我们可以在保证语法没有问题的前提下随意书写Python代码，但是在实际开发中，采用一致的风格书写出可读性强的代码是每个专业的程序员应该做到的事情，也是每个公司的编程规范中会提出的要求，这些在多人协作开发一个项目（团队开发）的时候显得尤为重要。我们可以从Python官方网站的PEP 8链接中找到该文档，下面我们对该文档的关键部分做一个简单的总结。</p>
+<h4 id="空格的使用"><a href="#空格的使用" class="headerlink" title="空格的使用"></a>空格的使用</h4><ul>
+<li><p>使用空格来表示缩进而不要用制表符（Tab）。在不同的编辑器中，Tab的宽度可能是2、4或8个字符，甚至是其他更离谱的值，用Tab来表示缩进对Python代码来说可能是一场灾难。</p>
+</li>
+<li><p>和语法相关的每一层缩进都用4个空格来表示。</p>
+</li>
+<li><p>每行的字符数不要超过79个字符，如果表达式因太长而占据了多行，除了首行之外的其余各行都应该在正常的缩进宽度上再加上4个空格。</p>
+</li>
+<li><p>函数和类的定义，代码前后都要用两个空行进行分隔。</p>
+</li>
+<li><p>在同一个类中，各个方法之间应该用一个空行进行分隔。</p>
+</li>
+<li><p>二元运算符的左右两侧应该保留一个空格，而且只要一个空格就好。</p>
+<h4 id="标识命名符"><a href="#标识命名符" class="headerlink" title="标识命名符"></a>标识命名符</h4></li>
+<li><p>变量、函数和属性应该使用小写字母来拼写，如果有多个单词就使用下划线进行连接。</p>
+</li>
+<li><p>类中受保护的实例属性，应该以一个下划线开头。</p>
+</li>
+<li><p>类中私有的实例属性，应该以两个下划线开头。</p>
+</li>
+<li><p>类和异常的命名，应该每个单词首字母大写。</p>
+</li>
+<li><p>模块级别的常量，应该采用全大写字母，如果有多个单词就用下划线进行连接。</p>
+</li>
+<li><p>类的实例方法，应该把第一个参数命名为self以表示对象自身。</p>
+</li>
+<li><p>类的类方法，应该把第一个参数命名为cls以表示该类自身。</p>
+<h4 id="表达式和语句"><a href="#表达式和语句" class="headerlink" title="表达式和语句"></a>表达式和语句</h4></li>
+<li><p>采用内联形式的否定词，而不要把否定词放在整个表达式的前面。例如<code>if a is not b</code>就比<code>if not a is b</code>更容易让人理解。</p>
+</li>
+<li><p>不要用检查长度的方式来判断字符串、列表等是否为None或者没有元素，应该用<code>if not x</code>这样的写法来检查它。</p>
+</li>
+<li><p>就算if分支、for循环、except异常捕获等中只有一行代码，也不要将代码和if、for、except等写在一起，分开写才会让代码更清晰。</p>
+</li>
+<li><p>import语句总是放在文件开头的地方。</p>
+</li>
+<li><p>引入模块的时候，<code>from math import sqrt</code>比<code>import math</code>更好。</p>
+</li>
+<li><p>如果有多个import语句，应该将其分为三部分，从上到下分别是Python标准模块、第三方模块和自定义模块，每个部分内部应该按照模块名称的字母表顺序来排列。</p>
+</li>
+</ul>
+<h3 id="代码中的注释"><a href="#代码中的注释" class="headerlink" title="代码中的注释"></a>代码中的注释</h3><p>  注释是编程语言的一个重要组成部分，用于在源代码中解释代码的作用从而增强程序的可读性和可维护性，当然也可以将源代码中不需要参与运行的代码段通过注释来去掉，这一点在调试程序的时候经常用到。注释在随源代码进入预处理器或编译时会被移除，不会在目标代码中保留也不会影响程序的执行结果。</p>
+<pre><code class="python">  &quot;&quot;&quot;
+  第一个Python程序 - hello, world!
+  向伟大的Dennis M. Ritchie先生致敬
+  &quot;&quot;&quot;
+
+  print(&#39;hello, world!&#39;)
+  # print(&quot;你好,世界！&quot;)
+  print(&#39;你好&#39;, &#39;世界&#39;)
+  print(&#39;hello&#39;, &#39;world&#39;, sep=&#39;, &#39;, end=&#39;!&#39;)
+  print(&#39;goodbye, world&#39;, end=&#39;!\n&#39;)
+</code></pre>
+  <hr/>
+
+
+<h2 id="语言元素"><a href="#语言元素" class="headerlink" title="语言元素"></a>语言元素</h2>
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls"
                 data-autoplay="false">
@@ -166,12 +222,19 @@
                 </div>
                 <ul>
                     <li><a href="/">2 <p>文章</p></a></li>
-                    <li><a href="/categories">2 <p>分类</p></a></li>
-                    <li><a href="/tags">2 <p>标签</p></a></li>
+                    <li><a href="/categories">1 <p>分类</p></a></li>
+                    <li><a href="/tags">1 <p>标签</p></a></li>
                 </ul>
             </div>
             
             
+            
+            <div class="box sticky animated fadeInRight faster">
+                <div id="toc" class="subbox">
+                    <h4>目录</h4>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#初识Python"><span class="toc-number">1.</span> <span class="toc-text">初识Python</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#PEP-8风格指南"><span class="toc-number">1.1.</span> <span class="toc-text">PEP 8风格指南</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码中的注释"><span class="toc-number">1.2.</span> <span class="toc-text">代码中的注释</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#语言元素"><span class="toc-number">2.</span> <span class="toc-text">语言元素</span></a></li></ol>
+                </div>
+            </div>
             
             
         </div>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+  
+  <entry>
+    <title>KroMusic项目开发学习日志</title>
+    <link href="/2020/02/04/KroMusic%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97/"/>
+    <url>/2020/02/04/KroMusic%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97/</url>
+    
+    <content type="html"><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>KroMusic 是个人基于 ASP.NET MVC5+EntityFramework 开发的一个音乐网站，主要用于网站开发学习和个人使用。此项目采用敏捷开发模型，开始时间为 2020 年 2 月 1 日，今后将以日志的形式记录开发和学习的过程。</p><h2 id="日志正文"><a href="#日志正文" class="headerlink" title="日志正文"></a>日志正文</h2><h3 id="二月一日"><a href="#二月一日" class="headerlink" title="二月一日"></a>二月一日</h3><h4 id="完成任务"><a href="#完成任务" class="headerlink" title="完成任务"></a>完成任务</h4><ul><li>完成用户表设计。</li><li>搭建好三层架构 UIL-BLL-DAL。</li><li>前端页面搭建，初步完成母版页开发。加入第一个区域，User。</li><li>完成登录功能。</li></ul><h4 id="学习内容"><a href="#学习内容" class="headerlink" title="学习内容"></a>学习内容</h4><ul><li>跨区域重定向需加入路由值｛area=”AreaName”｝如：<code>@Url.Action(&quot;Signin&quot;, &quot;Account&quot;, new { area = &quot;User&quot; })</code>，同区域内无需加入路由值。若重定向目标不是在区域内，则设定<code>｛area=””｝</code>。</li><li>登录和注册前端数据验证先引入<code>jquery.validate.js</code>，后台设定检验标准，先引入命名空间<code>using System.ComponentModel.DataAnnotations;</code>设定数据的验证类型，如</li></ul><pre><code class="c#">        [Required(ErrorMessage =&quot;禁止为空！&quot;)]        [StringLength(16, MinimumLength = 6,ErrorMessage =&quot;密码长度为6~16&quot;)]        [DataType(DataType.Password)]        [Display(Name = &quot;密码&quot;)]        [Range(6, 99,ErrorMessage =&quot;非法年龄！&quot;)]</code></pre><ul><li>应用视图模型将数据传入前端页面进行填写和验证。后台应用<code>ModelState.IsValid</code>验证前端传回的数据。</li><li>设定密码保存七日，运用到 cookies。</li></ul><pre><code class="c#">/*添加cookie*/HttpCookie cookie = new HttpCookie(&quot;userinfo&quot;);TimeSpan ts = new TimeSpan(7, 0, 0, 0);cookie.Expires = DateTime.Now + ts;cookie.Values.Add(&quot;UserName&quot;, model.UserName);cookie.Values.Add(&quot;Password&quot;, model.Password);Response.AppendCookie(cookie);/*删除cookie*/ HttpCookie cok = Request.Cookies[&quot;userinfo&quot;];if (cok != null){    TimeSpan ts = new TimeSpan(-1, 0, 0, 0);    cok.Expires = DateTime.Now.Add(ts);//删除整个Cookie，只要把过期时间设置为现在    Response.AppendCookie(cok);}</code></pre><h4 id="待改进"><a href="#待改进" class="headerlink" title="待改进"></a>待改进</h4><ul><li>将于用户表有外键关联的表有：歌单表、喜欢歌曲表、评论表、点赞表。</li><li>登录注册框需要进场动画并配有相应背景，导航栏待改进。</li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>Category1</category>
+      
+      <category>Category2</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Tag1</tag>
+      
+      <tag>Tag2</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Python学习</title>
+    <link href="/2020/01/05/python-learning/"/>
+    <url>/2020/01/05/python-learning/</url>
+    
+    <content type="html"><![CDATA[<h2 id="初识Python"><a href="#初识Python" class="headerlink" title="初识Python"></a>初识Python</h2><h3 id="PEP-8风格指南"><a href="#PEP-8风格指南" class="headerlink" title="PEP 8风格指南"></a>PEP 8风格指南</h3><p>  PEP是Python Enhancement Proposal的缩写，通常翻译为“Python增强提案”。每个PEP都是一份为Python社区提供的指导Python往更好的方向发展的技术文档，其中的第8号增强提案（PEP 8）是针对Python语言编订的代码风格指南。尽管我们可以在保证语法没有问题的前提下随意书写Python代码，但是在实际开发中，采用一致的风格书写出可读性强的代码是每个专业的程序员应该做到的事情，也是每个公司的编程规范中会提出的要求，这些在多人协作开发一个项目（团队开发）的时候显得尤为重要。我们可以从Python官方网站的PEP 8链接中找到该文档，下面我们对该文档的关键部分做一个简单的总结。</p><h4 id="空格的使用"><a href="#空格的使用" class="headerlink" title="空格的使用"></a>空格的使用</h4><ul><li>使用空格来表示缩进而不要用制表符（Tab）。在不同的编辑器中，Tab的宽度可能是2、4或8个字符，甚至是其他更离谱的值，用Tab来表示缩进对Python代码来说可能是一场灾难。</li><li>和语法相关的每一层缩进都用4个空格来表示。</li><li>每行的字符数不要超过79个字符，如果表达式因太长而占据了多行，除了首行之外的其余各行都应该在正常的缩进宽度上再加上4个空格。</li><li>函数和类的定义，代码前后都要用两个空行进行分隔。</li><li>在同一个类中，各个方法之间应该用一个空行进行分隔。</li><li>二元运算符的左右两侧应该保留一个空格，而且只要一个空格就好。</li></ul><h4 id="标识命名符"><a href="#标识命名符" class="headerlink" title="标识命名符"></a>标识命名符</h4><ul><li>变量、函数和属性应该使用小写字母来拼写，如果有多个单词就使用下划线进行连接。</li><li>类中受保护的实例属性，应该以一个下划线开头。</li><li>类中私有的实例属性，应该以两个下划线开头。</li><li>类和异常的命名，应该每个单词首字母大写。</li><li>模块级别的常量，应该采用全大写字母，如果有多个单词就用下划线进行连接。</li><li>类的实例方法，应该把第一个参数命名为self以表示对象自身。</li><li>类的类方法，应该把第一个参数命名为cls以表示该类自身。</li></ul><h4 id="表达式和语句"><a href="#表达式和语句" class="headerlink" title="表达式和语句"></a>表达式和语句</h4><ul><li>采用内联形式的否定词，而不要把否定词放在整个表达式的前面。例如<code>if a is not b</code>就比<code>if not a is b</code>更容易让人理解。</li><li>不要用检查长度的方式来判断字符串、列表等是否为None或者没有元素，应该用<code>if not x</code>这样的写法来检查它。</li><li>就算if分支、for循环、except异常捕获等中只有一行代码，也不要将代码和if、for、except等写在一起，分开写才会让代码更清晰。</li><li>import语句总是放在文件开头的地方。</li><li>引入模块的时候，<code>from math import sqrt</code>比<code>import math</code>更好。</li><li>如果有多个import语句，应该将其分为三部分，从上到下分别是Python标准模块、第三方模块和自定义模块，每个部分内部应该按照模块名称的字母表顺序来排列。</li></ul><h3 id="代码中的注释"><a href="#代码中的注释" class="headerlink" title="代码中的注释"></a>代码中的注释</h3><p>  注释是编程语言的一个重要组成部分，用于在源代码中解释代码的作用从而增强程序的可读性和可维护性，当然也可以将源代码中不需要参与运行的代码段通过注释来去掉，这一点在调试程序的时候经常用到。注释在随源代码进入预处理器或编译时会被移除，不会在目标代码中保留也不会影响程序的执行结果。</p><pre><code class="python">  &quot;&quot;&quot;  第一个Python程序 - hello, world!  向伟大的Dennis M. Ritchie先生致敬  &quot;&quot;&quot;  print(&#39;hello, world!&#39;)  # print(&quot;你好,世界！&quot;)  print(&#39;你好&#39;, &#39;世界&#39;)  print(&#39;hello&#39;, &#39;world&#39;, sep=&#39;, &#39;, end=&#39;!&#39;)  print(&#39;goodbye, world&#39;, end=&#39;!\n&#39;)</code></pre>  <hr/><h2 id="语言元素"><a href="#语言元素" class="headerlink" title="语言元素"></a>语言元素</h2>]]></content>
+    
+    
+    <categories>
+      
+      <category>Python</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Python</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="/2020/01/05/hello-world/"/>
+    <url>/2020/01/05/hello-world/</url>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="bash">$ hexo new &quot;My New Post&quot;</code></pre><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="bash">$ hexo server</code></pre><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="bash">$ hexo generate</code></pre><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="bash">$ hexo deploy</code></pre><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  
+</search>

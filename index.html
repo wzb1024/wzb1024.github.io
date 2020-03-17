@@ -1,480 +1,470 @@
-
 <!DOCTYPE html>
-<html lang="zh-CN" class="loading">
+<html lang="zh-CN">
+
+
+
+
+
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>个人博客 | KroKro</title>
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="google" content="notranslate" />
-    <meta name="keywords" content="TriDiamond Obsidian,"> 
-    
-    <meta name="author" content="zhenbang"> 
-    <link rel="alternative" href="atom.xml" title="个人博客 | KroKro" type="application/atom+xml"> 
-    <link rel="icon" href="/img/favicon.png"> 
-    <link href="https://fonts.loli.net/css?family=Roboto+Mono|Rubik&display=swap" rel="stylesheet">
-    
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_nzgqgvnmkjb.css">
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="description" content="">
+  <meta name="author" content="zhenbang">
+  <meta name="keywords" content="">
+  <title>个人博客 | KroKro</title>
 
-    
-<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.7.2/animate.min.css">
+  <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css"  >
+<link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css"  >
+<link rel="stylesheet" href="/lib/mdbootstrap/css/mdb.min.css"  >
+<link rel="stylesheet" href="/lib/github-markdown/github-markdown.min.css"  >
 
-    
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1067060_qzomjdt8bmp.css">
 
-    
-<link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/codemirror.min.css">
 
-    
-<link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/theme/dracula.css">
 
-    
-<link rel="stylesheet" href="/css/obsidian.css">
+  <link rel="stylesheet" href="/lib/prettify/tomorrow-night-eighties.min.css"  >
 
-    
-<link rel="stylesheet" href="/css/ball-atom.min.css">
+<link rel="stylesheet" href="/css/main.css"  >
+
+
+  <link rel="stylesheet" href="/lib/fancybox/jquery.fancybox.min.css"  >
+
 
 <meta name="generator" content="Hexo 4.2.0"></head>
 
 
-<body class="loading">
-    <div class="loader">
-        <div class="la-ball-atom la-2x">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </div>
-    <span id="config-title" style="display:none">个人博客 | KroKro</span>
-    <div id="loader"></div>
-    <div class="nav">
-    <ul id="menu-menu" class="menu">
-        
-        <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
-            <a href="/about/" title="关于" external="false">关于</a>
-        </li>
-        
-        <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
-            <a href="/categories/" title="分类" external="false">分类</a>
-        </li>
-        
-        <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
-            <a href="/tags/" title="标签" external="false">标签</a>
-        </li>
-        
-        <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
-            <a href="/archives/" title="存档" external="false">存档</a>
-        </li>
-        
-    </ul>
-    <p class="copyright" id="copyright">
-        &copy; 2020 zhenbang.
-        Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
-        Theme <a href="https://github.com/TriDiamond/hexo-theme-obsidian" title="Obsidian" target="_blank" rel="noopener">Obsidian</a>
-    </p>
-</div>
+<body>
+  <header style="height: 100vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>个人博客 | KroKro</strong>&nbsp;</a>
 
-<div id="container">
-    
-<div class="search-box">
-    <form class="site-search-form">
-        <span class="iconfont icon-search"></span>
-        <input type="text" id="local-search-input" class="st-search-input" />
-        <div class="iconfont icon-cross search-box-close"></div>
-    </form>
-    <div class="search-scrollable">
-        <div id="local-search-result" class="local-search-result-cls" data-initialise="首次搜索，正在载入索引文件，请稍后……"
-            data-start="输入关键词搜索。" data-empty="没有找到内容，请尝试更换检索词。">
-            <span>输入关键词搜索。</span>
-        </div>
-    </div>
-</div>
-<div id="header">
-    <div>
-        <div class="logo animated fadeInDown">
-            <img src="/img/favicon.png" alt="">
-            <a class="image-logo" href="/"></a>
-        </div>
-        <ul id="menu-menu" class="menu text-menu">
-            
-            <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
-                <a href="/about/" title="关于" external="false" class="menu-link">关于</a>
-            </li>
-            
-            <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
-                <a href="/categories/" title="分类" external="false" class="menu-link">分类</a>
-            </li>
-            
-            <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
-                <a href="/tags/" title="标签" external="false" class="menu-link">标签</a>
-            </li>
-            
-            <li class="animated fadeInDown menu-item menu-item-type-post_type menu-item-object-page">
-                <a href="/archives/" title="存档" external="false" class="menu-link">存档</a>
-            </li>
-            
-            
-        </ul>
-        <div class="iconfont icon-menu switchmenu gradient-text animated fadeInDown"></div>
-    </div>
-</div>
-<div id="screen">
-    <div id="mark">
-        <div class="cover animated fadeIn" style="
-            animation-delay: 900ms;
-            animation-duration: 2.8s;
-            background-image:
-                radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.56), #100e17),
-                url(http://domain.com/awesome.jpg);">
-        </div>
-    </div>
-    
-    <div id="post0" class="else">
-        <p class="animated fadeInDown">
-            
-            <a href="/categories/Python"><b>「
-                </b>PYTHON<b> 」</b></a>
-            
-            一月 05, 2020
-        </p>
-        <h3 class="post-title animated fadeInDown">
-            <a href="/2020/01/05/python-learning/" title="Python学习" class="posttitle">Python学习</a></h3>
-        
-        <p class="post-count animated fadeInDown">
-            
-            <span>
-                <b class="iconfont icon-text2"></b> <i>文章字数</i>
-                2.5k
-            </span>
-            
-            
-            <span>
-                <b class="iconfont icon-timer__s"></b> <i>阅读约需</i>
-                2 mins.
-            </span>
-            
-            
-        </p>
-        
-        
-        <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Python/" rel="tag">Python</a></li></ul>
-        
-        <div class="md-content animated fadeIn">
-            
-            <h3 id="PEP-8风格指南"><a href="#PEP-8风格指南" class="headerlink" title="PEP 8风格指南"></a>PEP 8风格指南</h3><p>  PEP是Python Enhancement Proposal的缩写，通常翻译为“Python增强提案”。每个PEP都是一份为Python社区提供的指导Python往更好的方向发展...</p>
-            
-            <span class="read-more"><a href="/2020/01/05/python-learning/" title="查看全文" class="posttitle">查看全文</a>
-                <b class="iconfont icon-arrow-right- gradient-text"></b></span>
-        </div>
-    </div>
-    
-</div>
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
 
-<div class="screen-gradient-after">
-    <div class="screen-gradient-content">
-        <div class="screen-gradient-content-inside">
-            <div class="bold-underline-links screen-gradient-sponsor">
-                <p>
-                    <span class="typed-text"></span>
-                </p>
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/">首页</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/archives/">归档</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/categories/">分类</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/tags/">标签</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/about/">关于</a>
+          </li>
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="view intro-2" id="background" parallax=true
+         style="background: url('/img/default.png')no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask rgba-black-light flex-center">
+          <div class="container text-center white-text fadeInUp">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+          </div>
+
+          
+            <div class="scroll-down-bar">
+              <i class="fas fa-angle-down scroll-down-arrow"></i>
             </div>
+          
         </div>
+      </div>
     </div>
-</div>
+  </header>
 
-    <div id="primary">
-        
-<div class="post" id="post">
-    <div class="post-cover animated fadeIn" style="
-            background-image:
-            radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
-            url(/img/welcome-cover.jpg);">
-    </div>
-    <div class="else">
-        <p class="animated fadeInDown">
-            
-                <a href="javascript:;"><b>「 </b>文章<b> 」</b></a>
-            
-            一月 05, 2020
-        </p>
-        <h3 class="post-title animated fadeInDown"><a href="/2020/01/05/hello-world/" title="Hello World" class="posttitle">Hello World</a></h3>
-        
-            <p class="post-count animated fadeInDown">
-                
-                    <span>
-                        <b class="iconfont icon-text2"></b> <i>文章字数</i>
-                        1.8k
-                    </span>
-                
-                
-                    <span>
-                        <b class="iconfont icon-timer__s"></b> <i>阅读约需</i>
-                        2 mins.
-                    </span>
-                
-                
-            </p>
-            
-        
-        <div class="md-content animated fadeIn">
-            
-                <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="bash">$ hexo new &quot;My New Post&quot;</code></pre>
-<p>More...</p>
-            
-            <span class="read-more"><a href="/2020/01/05/hello-world/" title="查看全文" class="posttitle">查看全文</a> <b class="iconfont icon-arrow-right- gradient-text"></b></span>
-        </div>
-    </div>
-</div>
-
-
-    </div>
+  <main>
     
-</div>
-<div id="preview"></div>
+      <div class="container nopadding-md">
+        <div class="py-5 z-depth-3" id="board">
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
 
-    <div id="back-to-top" class="animated fadeIn faster">
-        <div class="flow"></div>
-        <span class="percentage animated fadeIn faster">0%</span>
-        <span class="iconfont icon-top02 animated fadeIn faster"></span>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <div class="col-12 col-md-8 mx-auto index-info">
+      <a href="/2020/02/04/KroMusic%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97/">
+        <p class="h4 index-header">KroMusic项目开发学习日志</p>
+      </a>
+
+      <a href="/2020/02/04/KroMusic%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97/">
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">概述KroMusic 是个人基于 ASP.NET MVC5+EntityFramework 开发的一个音乐网站，主要用于网站开发学习和个人使用。此项目采用敏捷开发模型，开始时间为 2020 年 2 月 1 日，今后将以日志的形式记录开发和学习的过程。
+日志正文二月一日完成任务
+完成用户表设计。
+搭建好三层架构 UIL-BLL-DAL。
+前端页面搭建，初步完成母版页开发。加入第一个区域，User。
+完成登录功能。
+
+学习内容
+跨区域重定向需加入路由值｛area=”AreaName”｝如：@Url.Action(&quot;Signin&quot;, &quot;Account&quot;, new { area = &quot;User&quot; })，同区域内无需加入路由值。若重定向目标不是在区域内，则设定｛area=””｝。
+登录和注册前端数据验证先引入jquery.validate.js，后台设定检验标准，先引入命名空间using System.ComponentModel.DataAnnotations;设定数据的验证类型，如
+
+        [Required(ErrorM</div>
+        </div>
+      </a>
+
+      <div class="index-btm">
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2020-02-04&nbsp;&nbsp;
+        
+        
+          <i class="iconfont icon-inbox"></i>
+          
+            <a href="/categories/Category1">Category1</a>&nbsp;
+          
+            <a href="/categories/Category2">Category2</a>&nbsp;
+          &nbsp;
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/Tag1">Tag1</a>&nbsp;
+          
+            <a href="/tags/Tag2">Tag2</a>&nbsp;
+          
+        
+      </div>
     </div>
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"superSample":2,"width":120,"height":200,"position":"left","hOffset":20,"vOffset":50},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
-<footer>
-    <p class="copyright" id="copyright">
-        &copy; 2020
-        <span class="gradient-text">
-            zhenbang
-        </span>.
-        Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
-        Theme
-        <span class="gradient-text">
-            <a href="https://github.com/TriDiamond/hexo-theme-obsidian" title="Obsidian" target="_blank" rel="noopener">Obsidian</a>
-        </span>
-        <small><a href="https://github.com/TriDiamond/hexo-theme-obsidian/blob/master/CHANGELOG.md" title="v1.4.3" target="_blank" rel="noopener">v1.4.3</a></small>
-    </p>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <div class="col-12 col-md-8 mx-auto index-info">
+      <a href="/2020/01/05/python-learning/">
+        <p class="h4 index-header">Python学习</p>
+      </a>
+
+      <a href="/2020/01/05/python-learning/">
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">初识PythonPEP 8风格指南  PEP是Python Enhancement Proposal的缩写，通常翻译为“Python增强提案”。每个PEP都是一份为Python社区提供的指导Python往更好的方向发展的技术文档，其中的第8号增强提案（PEP 8）是针对Python语言编订的代码风格指南。尽管我们可以在保证语法没有问题的前提下随意书写Python代码，但是在实际开发中，采用一致的风格书写出可读性强的代码是每个专业的程序员应该做到的事情，也是每个公司的编程规范中会提出的要求，这些在多人协作开发一个项目（团队开发）的时候显得尤为重要。我们可以从Python官方网站的PEP 8链接中找到该文档，下面我们对该文档的关键部分做一个简单的总结。
+空格的使用
+使用空格来表示缩进而不要用制表符（Tab）。在不同的编辑器中，Tab的宽度可能是2、4或8个字符，甚至是其他更离谱的值，用Tab来表示缩进对Python代码来说可能是一场灾难。
+和语法相关的每一层缩进都用4个空格来表示。
+每行的字符数不要超过79个字符，如果表达式因太长而占据了多行，除了首行之外的其余各行都应该在正常的缩进宽度上</div>
+        </div>
+      </a>
+
+      <div class="index-btm">
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2020-01-05&nbsp;&nbsp;
+        
+        
+          <i class="iconfont icon-inbox"></i>
+          
+            <a href="/categories/Python">Python</a>&nbsp;
+          &nbsp;
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/Python">Python</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <div class="col-12 col-md-8 mx-auto index-info">
+      <a href="/2020/01/05/hello-world/">
+        <p class="h4 index-header">Hello World</p>
+      </a>
+
+      <a href="/2020/01/05/hello-world/">
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
+Quick StartCreate a new post$ hexo new &quot;My New Post&quot;
+More info: Writing
+Run server$ hexo server
+More info: Server
+Generate static files$ hexo generate
+More info: Generating
+Deploy to remote sites$ hexo deploy
+More info: Deployment
+</div>
+        </div>
+      </a>
+
+      <div class="index-btm">
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2020-01-05&nbsp;&nbsp;
+        
+        
+        
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+  </main>
+
+  
+    <a class="z-depth-1" id="scroll-top-button" href="#" role="button">
+      <i class="fa fa-chevron-up scroll-top-arrow" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><b>Hexo</b></a>
+    <i class="iconfont icon-love"></i>
+    <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"> <b>Fluid</b></a>
+    <br>
+
+    
+  
+    <!-- 不蒜子统计PV -->
+    
+    &nbsp;<span id="busuanzi_container_site_pv"></span>总访问量 
+          <span id="busuanzi_value_site_pv"></span> 次&nbsp;
+  
+  
+    <!-- 不蒜子统计UV -->
+    
+    &nbsp;<span id="busuanzi_container_site_uv"></span>总访客数 
+            <span id="busuanzi_value_site_uv"></span> 人&nbsp;
+  
+  <br>
+
+
+
+    
+
+
+    <!-- cnzz Analytics icon -->
+    
+
+  </div>
 </footer>
 
-<script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-<script>
-  MathJax.Hub.Config({
-    "HTML-CSS": {
-      preferredFont: "TeX",
-      availableFonts: ["STIX", "TeX"],
-      linebreaks: {
-        automatic: true
-      },
-      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
-    },
-    tex2jax: {
-      inlineMath: [
-        ["$", "$"],
-        ["\\(", "\\)"]
+<!-- SCRIPTS -->
+<script src="/lib/jquery/jquery.min.js" ></script>
+<script src="/lib/popper/popper.min.js" ></script>
+<script src="/lib/bootstrap/js/bootstrap.min.js" ></script>
+<script src="/lib/mdbootstrap/js/mdb.min.js" ></script>
+<script src="/js/main.js" ></script>
+
+
+  <script src="/js/lazyload.js" ></script>
+
+
+
+
+
+  <script src="/lib/smoothscroll/SmoothScroll.min.js" ></script>
+
+
+
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+<!-- Plugins -->
+
+
+  
+
+  
+
+  
+
+  
+
+  <!-- cnzz Analytics -->
+  
+
+
+
+  <script src="/lib/prettify/prettify.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      $('pre').addClass('prettyprint  linenums');
+      prettyPrint();
+    })
+  </script>
+
+
+
+  <script src="/lib/typed/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "&nbsp;",
       ],
-      processEscapes: true,
-      ignoreClass: "tex2jax_ignore|dno",
-      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    },
-    TeX: {
-      noUndefined: {
-        attributes: {
-          mathcolor: "red",
-          mathbackground: "#FFEEEE",
-          mathsize: "90%"
-        }
-      },
-      Macros: {
-        href: "{}"
-      }
-    },
-    messageStyle: "none"
-  });
-</script>
-<script>
-  function initialMathJax() {
-    MathJax.Hub.Queue(function () {
-      var all = MathJax.Hub.getAllJax(),
-        i;
-      // console.log(all);
-      for (i = 0; i < all.length; i += 1) {
-        console.log(all[i].SourceElement().parentNode)
-        all[i].SourceElement().parentNode.className += ' has-jax';
-      }
+      cursorChar: "_",
+      typeSpeed: 70,
+      loop: false,
     });
-  }
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
 
-  function reprocessMathJax() {
-    if (typeof MathJax !== 'undefined') {
-      MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+
+
+  <script src="/lib/anchor/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "false",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
     }
-  }
-</script>
+    anchors.add(res.join(", "))
+  </script>
 
 
 
-
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="/js/plugin.js"></script>
-<script src="/js/obsidian.js"></script>
-<script src="/js/jquery.truncate.js"></script>
-<script src="/js/search.js"></script>
-
-
-<script src="//cdn.bootcss.com/typed.js/2.0.10/typed.min.js"></script>
-
-
-<script src="//cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script>
-
-
-<script src="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
-
-
-<script src="https://cdn.bootcss.com/codemirror/5.48.4/codemirror.min.js"></script>
-
-    
-<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/javascript/javascript.min.js"></script>
-
-
-    
-<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/css/css.min.js"></script>
-
-
-    
-<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/xml/xml.min.js"></script>
-
-
-    
-<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/htmlmixed/htmlmixed.min.js"></script>
-
-
-    
-<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/clike/clike.min.js"></script>
-
-
-    
-<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/php/php.min.js"></script>
-
-
-    
-<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/shell/shell.min.js"></script>
-
-
-    
-<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/python/python.min.js"></script>
-
-
-
-
-    
-<script src="/js/busuanzi.min.js"></script>
-
-    <script>
-        $(document).ready(function () {
-            if ($('span[id^="busuanzi_"]').length) {
-                initialBusuanzi();
-            }
-        });
-    </script>
-
-
-
-<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.css">
-<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/default-skin/default-skin.min.css">
-
-
-<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.js"></script>
-<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
-
-
-<!-- Root element of PhotoSwipe. Must have class pswp. -->
-<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-    <!-- Background of PhotoSwipe. 
-         It's a separate element as animating opacity is faster than rgba(). -->
-    <div class="pswp__bg"></div>
-    <!-- Slides wrapper with overflow:hidden. -->
-    <div class="pswp__scroll-wrap">
-        <!-- Container that holds slides. 
-            PhotoSwipe keeps only 3 of them in the DOM to save memory.
-            Don't modify these 3 pswp__item elements, data is added later on. -->
-        <div class="pswp__container">
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-        </div>
-        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
-        <div class="pswp__ui pswp__ui--hidden">
-            <div class="pswp__top-bar">
-                <!--  Controls are self-explanatory. Order can be changed. -->
-                <div class="pswp__counter"></div>
-                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-                <button class="pswp__button pswp__button--share" title="Share"></button>
-                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
-                <!-- element will get class pswp__preloader--active when preloader is running -->
-                <div class="pswp__preloader">
-                    <div class="pswp__preloader__icn">
-                      <div class="pswp__preloader__cut">
-                        <div class="pswp__preloader__donut"></div>
-                      </div>
-                    </div>
-                </div>
-            </div>
-            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                <div class="pswp__share-tooltip"></div> 
-            </div>
-            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-            </button>
-            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-            </button>
-            <div class="pswp__caption">
-                <div class="pswp__caption__center"></div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="//www.googletagmanager.com/gtag/js?id=UA-149874671-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'UA-149874671-1');
-    </script>
-
-
-
-
-
-<script>
-    function initialTyped () {
-        var typedTextEl = $('.typed-text');
-        if (typedTextEl && typedTextEl.length > 0) {
-            var typed = new Typed('.typed-text', {
-                strings: ["Think like an artist, develop like an artisan", "艺术家思维去思考问题，工匠创造精神去开发"],
-                typeSpeed: 90,
-                loop: true,
-                loopCount: Infinity,
-                backSpeed: 20,
-            });
-        }
+  <script src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      getSearchFile(path);
+      this.onclick = null
     }
-
-    if ($('.article-header') && $('.article-header').length) {
-        $(document).ready(function () {
-            initialTyped();
-        });
-    }
-</script>
+  </script>
 
 
 
+  <script src="/lib/fancybox/jquery.fancybox.min.js" ></script>
+  <script>
+    $("#post img:not(.no-zoom img, img[no-zoom])").each(
+      function () {
+        var element = document.createElement("a");
+        $(element).attr("data-fancybox", "images");
+        $(element).attr("href", $(this).attr("src"));
+        $(this).wrap(element);
+      }
+    );
+  </script>
 
+
+
+
+
+
+
+
+
+
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"superSample":2,"width":120,"height":200,"position":"left","hOffset":20,"vOffset":50},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>
